@@ -1,15 +1,15 @@
-interface ivehicle {
+interface Ivehicle {
     getDetails(): string;
     start(): string;
 }//1
-abstract class vehicle implements ivehicle {
+abstract class Vehicle implements Ivehicle {
     constructor(public make: string, public model: string) {}
     start(): string {
         return `The vehicle ${this.make} ${this.model} is starting.`;
     }
     abstract getDetails(): string;
 }//2
-class car extends vehicle {
+class Cars extends Vehicle {
     constructor(public make: string, public model: string, public year: number) {
         super(make, model);
     }
@@ -18,6 +18,6 @@ class car extends vehicle {
     }
 }//3
 
-const car1 = new car("BYD", "Seagull", 2024);
+const car1 = new Cars("BYD", "Seagull", 2024);
 console.log(car1.start());
 console.log(car1.getDetails());//4

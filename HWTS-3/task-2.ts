@@ -1,11 +1,11 @@
-interface iperson {
+interface Iperson {
     name: string;
     surname: string;
     experienceYears: number;
     getDetails(): string;
 }
 
-abstract class Employee implements iperson {
+abstract class Employee implements Iperson {
     protected salary: number = 0;
     protected abstract calculateSalary(experienceYears: number): number;
     constructor(public name: string, public surname: string, public experienceYears: number, calculateSalary: (experienceYears: number) => number) {}
