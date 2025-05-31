@@ -1,4 +1,4 @@
-function map<T>(arr: T[], callback: (el: T, i: number) => T): T[] {
+function map<T extends U, U>(arr: T[], callback: (el: T, i: number) => T): U[] {
     const result: T[] = [];
     for (let i = 0; i < arr.length; i++) {
       result.push(callback(arr[i], i));
